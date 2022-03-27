@@ -16,7 +16,7 @@ AddEventHandler("Stax:Buy", function(Pos, TypeMoney, Items, total, Stax, Index)
         return
     end
     if xMoney >= total then
-        xPlayer.removeMoney(total)
+        xPlayer.removeAccountMoney(TypeMoney, total)
         xPlayer.addInventoryItem(Items,Index)
         TriggerClientEvent('esx:showAdvancedNotification', source, 'Information', '~o~Supérette~s~','Vous avez acheté [~o~ x ' ..Index..'~s~ ~y~'..Stax..' ~s~] pour ~g~'..total..'$~s~','CHAR_MP_FM_CONTACT', 8)
     else
